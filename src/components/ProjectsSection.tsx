@@ -26,7 +26,8 @@ const projects = [
   {
     title: "Healthcare App",
     description: "Patient management system designed for healthcare professionals with emphasis on accessibility and efficiency.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f",
+    // image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f",
+    image: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
     category: "Mobile Design",
     tools: ["Figma", "Adobe XD", "Maze"],
     link: "#",
@@ -39,6 +40,16 @@ const projects = [
     category: "Web Design",
     tools: ["Figma", "Framer", "Lottie"],
     link: "#",
+    github: "#"
+  },
+  {
+    title: "Harambee E-Student Mobile App",
+    description: "Mobile app for students to access educational resources and services.",
+    // image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+    image: "https://i.imgur.com/MlOCdnj.jpeg",
+    category: "Mobile Design",
+    tools: ["Figma"],
+    link: "https://www.figma.com/design/HnGZTy1LN1w3OFl81XBzhx/Harambee-E-Student-Mobile-App?node-id=0-1&t=CwPSx8xOi5q8bTGm-1",
     github: "#"
   }
 ];
@@ -56,17 +67,17 @@ const ProjectsSection = () => {
             Selected Projects
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A showcase of my recent work across various industries and platforms, 
+            A showcase of my recent work across various industries and platforms,
             demonstrating user-centered design solutions.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-on-scroll">
           {projects.map((project, index) => (
             <Card key={index} className="group overflow-hidden shadow-elegant hover:shadow-elegant-hover transition-all duration-500 hover:-translate-y-2">
               <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -79,7 +90,7 @@ const ProjectsSection = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-3">{project.title}</h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tools.map((tool, toolIndex) => (
                     <span key={toolIndex} className="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">
@@ -87,7 +98,7 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-3">
                   <Button size="sm" className="flex-1">
                     <ExternalLink className="w-4 h-4 mr-2" />
