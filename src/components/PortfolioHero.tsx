@@ -11,7 +11,9 @@ const PortfolioHero = () => {
           <div className="mb-8 animate-fade-in">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b1e5" 
+                // src="https://images.unsplash.com/photo-1494790108755-2616b612b1e5" 
+                // src="https://z-p3-scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/489345111_3036309999867099_966733665901918614_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHeDO4Eb5MplxoWtlf51uyaQ94CIerTvvJD3gIh6tO-8vqKJtss8AovFBVpROvVXMYhgiIZIEh_i4b9fYejQid4&_nc_ohc=QwXsiknFtxsQ7kNvwH6PZl7&_nc_oc=AdlDRBlH_xlHzdEndfwnYmbNDK84g_0kbt-utACTG7SZOvsfgExHvSGaXDafBVOiGQg&_nc_zt=23&_nc_ht=z-p3-scontent.fadd2-1.fna&_nc_gid=txPZiUWKGTBTh49RnLmBwg&oh=00_AfID0MXCJ2xJVPyqsf3_y--esJML_tWz259pm0B4CoJSFA&oe=683731CB"
+                src="https://z-p3-scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/489729712_3036309609867138_7570064257707748578_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHdyC50De3ZGCOGuxNISnyh4LLv92wxbdjgsu_3bDFt2B_L6HPwQCC8H5M92cBWyn0331jeIn9ziaStEDGrZ8e4&_nc_ohc=IEbigYqC2esQ7kNvwGHFhCW&_nc_oc=Adn-W2Sw_S2Kz5HLz6GDb9SY9Sb5eA4ktm-9z5BIuJqOt3WojteFWk_8poXApQBp5go&_nc_zt=23&_nc_ht=z-p3-scontent.fadd2-1.fna&_nc_gid=Tb5IbfTeTd1gUYxrqwIBwQ&oh=00_AfI0CSaRho7zlkgS-n-J1CGoUD8kHFmid8Ows82-h2t-_g&oe=68374EFB"
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />
