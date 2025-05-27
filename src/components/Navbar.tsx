@@ -55,7 +55,7 @@ const Navbar = () => {
           <div className="w-8 h-8 bg-pulse-500 rounded-full flex items-center justify-center text-white font-bold">
             A
           </div>
-          <span className="font-bold text-lg">baabbii</span>
+        <span className="font-bold text-lg">baabbii</span>
         </a>
 
         {/* Desktop Navigation */}

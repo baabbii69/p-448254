@@ -3,6 +3,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const projects = [
   {
@@ -11,6 +12,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
     category: "Mobile Design",
     tools: ["Figma", "Protopie", "Principle"],
+    slug: "ecommerce-mobile-app",
     link: "#",
     github: "#"
   },
@@ -20,16 +22,17 @@ const projects = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
     category: "Web Design",
     tools: ["Sketch", "InVision", "Zeplin"],
+    slug: "saas-dashboard",
     link: "#",
     github: "#"
   },
   {
     title: "Healthcare App",
     description: "Patient management system designed for healthcare professionals with emphasis on accessibility and efficiency.",
-    // image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f",
     image: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
     category: "Mobile Design",
     tools: ["Figma", "Adobe XD", "Maze"],
+    slug: "healthcare-app",
     link: "#",
     github: "#"
   },
@@ -45,7 +48,6 @@ const projects = [
   {
     title: "Harambee E-Student Mobile App",
     description: "Mobile app for students to access educational resources and services.",
-    // image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
     image: "https://i.imgur.com/MlOCdnj.jpeg",
     category: "Mobile Design",
     tools: ["Figma"],
@@ -55,6 +57,8 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="w-full py-20 bg-white" id="projects">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
@@ -63,9 +67,7 @@ const ProjectsSection = () => {
             <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">01</span>
             <span>Featured Work</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-            Selected Projects
-          </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">Selected Projects</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             A showcase of my recent work across various industries and platforms,
             demonstrating user-centered design solutions.
@@ -74,12 +76,17 @@ const ProjectsSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-on-scroll">
           {projects.map((project, index) => (
-            <Card key={index} className="group overflow-hidden shadow-elegant hover:shadow-elegant-hover transition-all duration-500 hover:-translate-y-2">
+            <Card key={index} className="group overflow-hidden shadow-elegant transition-transform duration-300 ease-out hover:shadow-lg hover:-translate-y-1">
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-64 object-cover transition-transform duration-300 ease-out group-hover:scale-102"
+                  loading="lazy"
+                  style={{
+                    willChange: 'transform, opacity',
+                    backfaceVisibility: 'hidden',
+                  }}
                 />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800">
@@ -100,13 +107,30 @@ const ProjectsSection = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <Button size="sm" className="flex-1">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Case Study
-                  </Button>
-                  <Button size="sm" variant="outline">
-                    <Github className="w-4 h-4" />
-                  </Button>
+                  <button
+                    onClick={() => navigate(`/projects/${project.slug}`)}
+                    className="flex-1"
+                  >
+                    <Button
+                      size="sm"
+                      className="w-full"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Case Study
+                    </Button>
+                  </button>
+                  <button
+                    onClick={() => navigate(`/projects/${project.slug}`)}
+                    className="flex-1"
+                  >
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="w-full"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  </button>
                 </div>
               </CardContent>
             </Card>
