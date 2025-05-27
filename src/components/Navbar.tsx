@@ -11,7 +11,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -26,7 +26,7 @@ const Navbar = () => {
       top: 0,
       behavior: 'smooth'
     });
-    
+
     if (isMenuOpen) {
       setIsMenuOpen(false);
       document.body.style.overflow = '';
@@ -37,14 +37,14 @@ const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
-        isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
+        isScrolled
+          ? "bg-white/80 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#" 
+        <a
+          href="#"
           className="flex items-center space-x-2"
           onClick={(e) => {
             e.preventDefault();
@@ -55,13 +55,13 @@ const Navbar = () => {
           <div className="w-8 h-8 bg-pulse-500 rounded-full flex items-center justify-center text-white font-bold">
             A
           </div>
-        <span className="font-bold text-lg">baabbii</span>
+          <span className="font-bold text-lg">baabbii</span>
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="nav-link"
             onClick={(e) => {
               e.preventDefault();
@@ -76,8 +76,8 @@ const Navbar = () => {
           <a href="#contact" className="nav-link">Contact</a>
         </nav>
 
-        <button 
-          className="md:hidden text-gray-700 p-3 focus:outline-none" 
+        <button
+          className="md:hidden text-gray-700 p-3 focus:outline-none"
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -91,9 +91,9 @@ const Navbar = () => {
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
-          <a 
-            href="#" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+          <a
+            href="#"
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100"
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -103,9 +103,9 @@ const Navbar = () => {
           >
             Home
           </a>
-          <a 
-            href="#projects" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+          <a
+            href="#projects"
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -113,9 +113,9 @@ const Navbar = () => {
           >
             Projects
           </a>
-          <a 
-            href="#skills" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+          <a
+            href="#skills"
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -123,9 +123,9 @@ const Navbar = () => {
           >
             Skills
           </a>
-          <a 
-            href="#about" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+          <a
+            href="#about"
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -133,9 +133,9 @@ const Navbar = () => {
           >
             About
           </a>
-          <a 
-            href="#contact" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+          <a
+            href="#contact"
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';

@@ -130,6 +130,43 @@ const caseStudies: Record<string, CaseStudyData> = {
       "Reduced patient wait times by 45%",
       "Improved medical staff efficiency by 30%"
     ]
+  },
+  "harambee-student-app": {
+    title: "Harambee Student Mobile App",
+    category: "Mobile Design",
+    thumbnail: "https://i.imgur.com/MlOCdnj.jpeg",
+    coverImage: "https://i.imgur.com/MlOCdnj.jpeg",
+    tools: ["Figma"],
+    overview: "A comprehensive mobile app designed to enhance the student experience at Harambee University. The app provides access to academic resources, campus services, and social features in a user-friendly interface.",
+    challenges: [
+      "Designing an intuitive interface for diverse student needs",
+      "Integrating multiple campus services into a single app",
+      "Ensuring accessibility for all students",
+      "Creating a scalable solution for future updates"
+    ],
+    solutions: [
+      {
+        title: "Unified Dashboard",
+        description: "Created a centralized dashboard that provides quick access to all academic resources, timetables, and announcements.",
+        image: "https://i.imgur.com/MlOCdnj.jpeg"
+      },
+      {
+        title: "Social Integration",
+        description: "Implemented a community feature that allows students to connect, form study groups, and share resources.",
+        image: "https://i.imgur.com/MlOCdnj.jpeg"
+      },
+      {
+        title: "Accessibility Features",
+        description: "Added voice commands, screen reader support, and customizable text sizes to ensure all students can use the app.",
+        image: "https://i.imgur.com/MlOCdnj.jpeg"
+      }
+    ],
+    results: [
+      "95% student satisfaction with app usability",
+      "80% increase in student engagement with campus resources",
+      "99% uptime with optimized performance",
+      "Compliance with all accessibility standards"
+    ]
   }
 };
 
@@ -138,21 +175,10 @@ const CaseStudy = () => {
   const navigate = useNavigate();
   const caseStudy = caseStudies[id];
 
+  // Ensure we have a valid case study
   if (!caseStudy) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Case Study Not Found</h2>
-          <Button
-            variant="outline"
-            onClick={() => navigate('/projects')}
-            className="px-6 py-2"
-          >
-            Back to Projects
-          </Button>
-        </div>
-      </div>
-    );
+    navigate('/');
+    return null;
   }
 
   return (
@@ -163,14 +189,14 @@ const CaseStudy = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => navigate('/projects')}
+            onClick={() => navigate('/#projects')}
             className="flex items-center hover:text-pulse-500 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Projects
           </Button>
           <div className="flex flex-col items-end">
-            <h1 className="text-3xl sm:text-4xl font-display font-bold mb-2">{caseStudy.title}</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-2">{caseStudy.title}</h1>
             <span className="text-sm text-gray-500">{caseStudy.category}</span>
           </div>
         </div>
@@ -186,7 +212,7 @@ const CaseStudy = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
-          <h2 className="text-4xl sm:text-5xl font-display font-bold text-white text-center mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-4">
             {caseStudy.title}
           </h2>
           <p className="text-xl text-white/90 max-w-2xl text-center">

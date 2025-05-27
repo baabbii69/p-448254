@@ -157,7 +157,11 @@ const ProjectsSection = () => {
                     variant="outline"
                     size="sm"
                     className="flex-1"
-                    onClick={() => window.open(project.link, '_blank')}
+                    onClick={() => {
+                      if (project.link && project.link !== '#') {
+                        window.open(project.link, '_blank');
+                      }
+                    }}
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Live Demo
