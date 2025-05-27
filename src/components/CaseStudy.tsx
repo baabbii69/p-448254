@@ -1,8 +1,25 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const caseStudies = {
+interface CaseStudyData {
+  title: string;
+  category: string;
+  thumbnail: string;
+  coverImage: string;
+  tools: string[];
+  overview: string;
+  challenges: string[];
+  solutions: Array<{
+    title: string;
+    description: string;
+    image: string;
+  }>;
+  results: string[];
+}
+
+const caseStudies: Record<string, CaseStudyData> = {
   "ecommerce-mobile-app": {
     title: "E-commerce Mobile App",
     category: "Mobile Design",
@@ -76,6 +93,43 @@ const caseStudies = {
       "99.9% system uptime",
       "80% faster data loading times"
     ]
+  },
+  "healthcare-app": {
+    title: "Healthcare App",
+    category: "Mobile Design",
+    thumbnail: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
+    coverImage: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
+    tools: ["Figma", "Adobe XD", "Maze"],
+    overview: "Patient management system designed for healthcare professionals with emphasis on accessibility and efficiency.",
+    challenges: [
+      "Creating an accessible interface for all users",
+      "Implementing HIPAA-compliant data handling",
+      "Designing for various medical workflows",
+      "Ensuring data privacy and security"
+    ],
+    solutions: [
+      {
+        title: "Accessible Design",
+        description: "Implemented WCAG 2.1 compliant design with voice commands and screen reader support.",
+        image: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center"
+      },
+      {
+        title: "Secure Architecture",
+        description: "Built a multi-layer security system with end-to-end encryption and regular audits.",
+        image: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center"
+      },
+      {
+        title: "Modular Workflow",
+        description: "Created a flexible system that can be customized for different medical specialties.",
+        image: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center"
+      }
+    ],
+    results: [
+      "98% user satisfaction with accessibility features",
+      "100% HIPAA compliance achieved",
+      "Reduced patient wait times by 45%",
+      "Improved medical staff efficiency by 30%"
+    ]
   }
 };
 
@@ -85,8 +139,20 @@ const CaseStudy = () => {
   const caseStudy = caseStudies[id];
 
   if (!caseStudy) {
-    navigate('/projects');
-    return null;
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold mb-4">Case Study Not Found</h2>
+          <Button
+            variant="outline"
+            onClick={() => navigate('/projects')}
+            className="px-6 py-2"
+          >
+            Back to Projects
+          </Button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -94,31 +160,38 @@ const CaseStudy = () => {
       {/* Header with Back Button */}
       <div className="container px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex items-center justify-between">
-          <button
+          <Button
+            variant="outline"
+            size="sm"
             onClick={() => navigate('/projects')}
-            className="flex items-center text-gray-600 hover:text-pulse-500 transition-colors"
+            className="flex items-center hover:text-pulse-500 transition-colors"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Projects
-          </button>
-          <h1 className="text-3xl sm:text-4xl font-display font-bold">{caseStudy.title}</h1>
+          </Button>
+          <div className="flex flex-col items-end">
+            <h1 className="text-3xl sm:text-4xl font-display font-bold mb-2">{caseStudy.title}</h1>
+            <span className="text-sm text-gray-500">{caseStudy.category}</span>
+          </div>
         </div>
       </div>
 
       {/* Cover Image */}
-      <div className="relative w-full h-[600px]">
+      <div className="relative w-full h-[600px] overflow-hidden">
         <img
           src={caseStudy.coverImage}
           alt={caseStudy.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h2 className="text-4xl sm:text-5xl font-display font-bold text-white text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+          <h2 className="text-4xl sm:text-5xl font-display font-bold text-white text-center mb-4">
             {caseStudy.title}
           </h2>
-          <p className="text-xl text-white/90 mt-4">{caseStudy.overview}</p>
+          <p className="text-xl text-white/90 max-w-2xl text-center">
+            {caseStudy.overview}
+          </p>
         </div>
       </div>
 
@@ -134,7 +207,7 @@ const CaseStudy = () => {
             <h3 className="text-2xl font-bold mb-4">Tools & Technologies</h3>
             <div className="flex flex-wrap gap-2">
               {caseStudy.tools.map((tool, index) => (
-                <span key={index} className="px-3 py-1 bg-gray-100 rounded text-sm">
+                <span key={index} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
                   {tool}
                 </span>
               ))}

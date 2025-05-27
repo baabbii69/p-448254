@@ -5,7 +5,19 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  tools: string[];
+  slug: string;
+  link: string;
+  github: string;
+  hasCaseStudy: boolean;
+}
+
+const projects: Project[] = [
   {
     title: "E-commerce Mobile App",
     description: "Complete redesign of a fashion e-commerce platform focusing on user journey optimization and conversion rate improvement.",
@@ -14,7 +26,8 @@ const projects = [
     tools: ["Figma", "Protopie", "Principle"],
     slug: "ecommerce-mobile-app",
     link: "#",
-    github: "#"
+    github: "#",
+    hasCaseStudy: true
   },
   {
     title: "SaaS Dashboard",
@@ -24,7 +37,8 @@ const projects = [
     tools: ["Sketch", "InVision", "Zeplin"],
     slug: "saas-dashboard",
     link: "#",
-    github: "#"
+    github: "#",
+    hasCaseStudy: true
   },
   {
     title: "Healthcare App",
@@ -34,7 +48,8 @@ const projects = [
     tools: ["Figma", "Adobe XD", "Maze"],
     slug: "healthcare-app",
     link: "#",
-    github: "#"
+    github: "#",
+    hasCaseStudy: true
   },
   {
     title: "Banking Platform",
@@ -42,8 +57,10 @@ const projects = [
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
     category: "Web Design",
     tools: ["Figma", "Framer", "Lottie"],
+    slug: "banking-platform",
     link: "#",
-    github: "#"
+    github: "#",
+    hasCaseStudy: false
   },
   {
     title: "Harambee E-Student Mobile App",
@@ -51,13 +68,31 @@ const projects = [
     image: "https://i.imgur.com/MlOCdnj.jpeg",
     category: "Mobile Design",
     tools: ["Figma"],
+    slug: "harambee-student-app",
     link: "https://www.figma.com/design/HnGZTy1LN1w3OFl81XBzhx/Harambee-E-Student-Mobile-App?node-id=0-1&t=CwPSx8xOi5q8bTGm-1",
-    github: "#"
+    github: "#",
+    hasCaseStudy: false
   }
 ];
 
 const ProjectsSection = () => {
   const navigate = useNavigate();
+
+  const handleViewCaseStudy = (slug: string) => {
+    if (!slug) {
+      console.error('Invalid project slug');
+      return;
+    }
+    navigate(`/case-study/${slug}`);
+  };
+
+  const navigateToCaseStudy = (slug: string) => {
+    if (!slug) {
+      console.error('Invalid project slug');
+      return;
+    }
+    window.location.href = `/case-study/${slug}`;
+  };
 
   return (
     <section className="w-full py-20 bg-white" id="projects">
@@ -106,31 +141,27 @@ const ProjectsSection = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => navigate(`/projects/${project.slug}`)}
-                    className="flex-1"
-                  >
+                <div className="flex flex-wrap gap-2">
+                  {project.hasCaseStudy && (
                     <Button
+                      variant="default"
                       size="sm"
-                      className="w-full"
+                      className="flex-1 bg-pulse-500 hover:bg-pulse-600 text-white"
+                      onClick={() => navigateToCaseStudy(project.slug)}
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       View Case Study
                     </Button>
-                  </button>
-                  <button
-                    onClick={() => navigate(`/projects/${project.slug}`)}
+                  )}
+                  <Button
+                    variant="outline"
+                    size="sm"
                     className="flex-1"
+                    onClick={() => window.open(project.link, '_blank')}
                   >
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="w-full"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                  </button>
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Live Demo
+                  </Button>
                 </div>
               </CardContent>
             </Card>
