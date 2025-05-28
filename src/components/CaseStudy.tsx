@@ -26,36 +26,40 @@ const caseStudies: Record<string, CaseStudyData> = {
     thumbnail: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
     coverImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
     tools: ["Figma", "Protopie", "Principle"],
-    overview: "Complete redesign of a fashion e-commerce platform focusing on user journey optimization and conversion rate improvement.",
+    overview:
+      "Complete redesign of a fashion e-commerce platform focusing on user journey optimization and conversion rate improvement.",
     challenges: [
       "Improving user navigation and discovery",
       "Optimizing checkout flow for higher conversion rates",
       "Enhancing product visualization and comparison",
-      "Creating a seamless mobile-first experience"
+      "Creating a seamless mobile-first experience",
     ],
     solutions: [
       {
         title: "Streamlined Navigation",
-        description: "Implemented a bottom tab navigation with quick access to key features, reducing user effort by 40%.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
+        description:
+          "Implemented a bottom tab navigation with quick access to key features, reducing user effort by 40%.",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
       },
       {
         title: "Smart Product Discovery",
-        description: "Created an AI-powered product recommendation system that increased average session duration by 35%.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
+        description:
+          "Created an AI-powered product recommendation system that increased average session duration by 35%.",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
       },
       {
         title: "Optimized Checkout Flow",
-        description: "Reduced checkout abandonment rate by 25% through a simplified, single-page checkout process.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
-      }
+        description:
+          "Reduced checkout abandonment rate by 25% through a simplified, single-page checkout process.",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
+      },
     ],
     results: [
       "Increased conversion rate by 30%",
       "Reduced bounce rate by 25%",
       "Improved user satisfaction score by 40%",
-      "Achieved 50% faster loading times"
-    ]
+      "Achieved 50% faster loading times",
+    ],
   },
   "saas-dashboard": {
     title: "SaaS Dashboard",
@@ -63,73 +67,86 @@ const caseStudies: Record<string, CaseStudyData> = {
     thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
     coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
     tools: ["Sketch", "InVision", "Zeplin"],
-    overview: "Intuitive analytics dashboard for a B2B SaaS platform with complex data visualization and real-time updates.",
+    overview:
+      "Intuitive analytics dashboard for a B2B SaaS platform with complex data visualization and real-time updates.",
     challenges: [
       "Visualizing complex data in an intuitive way",
       "Creating real-time data updates without performance issues",
       "Designing for different user roles and permissions",
-      "Ensuring scalability for future features"
+      "Ensuring scalability for future features",
     ],
     solutions: [
       {
         title: "Data Visualization",
-        description: "Implemented interactive charts and graphs using D3.js for better data understanding.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+        description:
+          "Implemented interactive charts and graphs using D3.js for better data understanding.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
       },
       {
         title: "Real-time Updates",
-        description: "Created a WebSocket-based system for instant data updates without page refresh.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+        description:
+          "Created a WebSocket-based system for instant data updates without page refresh.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
       },
       {
         title: "Role-based UI",
-        description: "Designed dynamic layouts that adapt based on user permissions and roles.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-      }
+        description:
+          "Designed dynamic layouts that adapt based on user permissions and roles.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      },
     ],
     results: [
       "95% user satisfaction with data visualization",
       "Real-time updates with <100ms latency",
       "99.9% system uptime",
-      "80% faster data loading times"
-    ]
+      "80% faster data loading times",
+    ],
   },
   "healthcare-app": {
     title: "Healthcare App",
     category: "Mobile Design",
-    thumbnail: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
-    coverImage: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
+    thumbnail:
+      "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
+    coverImage:
+      "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
     tools: ["Figma", "Adobe XD", "Maze"],
-    overview: "Patient management system designed for healthcare professionals with emphasis on accessibility and efficiency.",
+    overview:
+      "Patient management system designed for healthcare professionals with emphasis on accessibility and efficiency.",
     challenges: [
       "Creating an accessible interface for all users",
       "Implementing HIPAA-compliant data handling",
       "Designing for various medical workflows",
-      "Ensuring data privacy and security"
+      "Ensuring data privacy and security",
     ],
     solutions: [
       {
         title: "Accessible Design",
-        description: "Implemented WCAG 2.1 compliant design with voice commands and screen reader support.",
-        image: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center"
+        description:
+          "Implemented WCAG 2.1 compliant design with voice commands and screen reader support.",
+        image:
+          "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
       },
       {
         title: "Secure Architecture",
-        description: "Built a multi-layer security system with end-to-end encryption and regular audits.",
-        image: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center"
+        description:
+          "Built a multi-layer security system with end-to-end encryption and regular audits.",
+        image:
+          "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
       },
       {
         title: "Modular Workflow",
-        description: "Created a flexible system that can be customized for different medical specialties.",
-        image: "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center"
-      }
+        description:
+          "Created a flexible system that can be customized for different medical specialties.",
+        image:
+          "https://cdn.dribbble.com/userupload/14209812/file/original-82c573b7724a7f65a9d4d42f38efe7fc.jpg?resize=1504x1128&vertical=center",
+      },
     ],
     results: [
       "98% user satisfaction with accessibility features",
       "100% HIPAA compliance achieved",
       "Reduced patient wait times by 45%",
-      "Improved medical staff efficiency by 30%"
-    ]
+      "Improved medical staff efficiency by 30%",
+    ],
   },
   "harambee-student-app": {
     title: "Harambee Student Mobile App",
@@ -137,37 +154,41 @@ const caseStudies: Record<string, CaseStudyData> = {
     thumbnail: "https://i.imgur.com/MlOCdnj.jpeg",
     coverImage: "https://i.imgur.com/MlOCdnj.jpeg",
     tools: ["Figma"],
-    overview: "A comprehensive mobile app designed to enhance the student experience at Harambee University. The app provides access to academic resources, campus services, and social features in a user-friendly interface.",
+    overview:
+      "A comprehensive mobile app designed to enhance the student experience at Harambee University. The app provides access to academic resources, campus services, and social features in a user-friendly interface.",
     challenges: [
       "Designing an intuitive interface for diverse student needs",
       "Integrating multiple campus services into a single app",
       "Ensuring accessibility for all students",
-      "Creating a scalable solution for future updates"
+      "Creating a scalable solution for future updates",
     ],
     solutions: [
       {
         title: "Unified Dashboard",
-        description: "Created a centralized dashboard that provides quick access to all academic resources, timetables, and announcements.",
-        image: "https://i.imgur.com/MlOCdnj.jpeg"
+        description:
+          "Created a centralized dashboard that provides quick access to all academic resources, timetables, and announcements.",
+        image: "https://i.imgur.com/MlOCdnj.jpeg",
       },
       {
         title: "Social Integration",
-        description: "Implemented a community feature that allows students to connect, form study groups, and share resources.",
-        image: "https://i.imgur.com/MlOCdnj.jpeg"
+        description:
+          "Implemented a community feature that allows students to connect, form study groups, and share resources.",
+        image: "https://i.imgur.com/MlOCdnj.jpeg",
       },
       {
         title: "Accessibility Features",
-        description: "Added voice commands, screen reader support, and customizable text sizes to ensure all students can use the app.",
-        image: "https://i.imgur.com/MlOCdnj.jpeg"
-      }
+        description:
+          "Added voice commands, screen reader support, and customizable text sizes to ensure all students can use the app.",
+        image: "https://i.imgur.com/MlOCdnj.jpeg",
+      },
     ],
     results: [
       "95% student satisfaction with app usability",
       "80% increase in student engagement with campus resources",
       "99% uptime with optimized performance",
-      "Compliance with all accessibility standards"
-    ]
-  }
+      "Compliance with all accessibility standards",
+    ],
+  },
 };
 
 const CaseStudy = () => {
@@ -177,7 +198,7 @@ const CaseStudy = () => {
 
   // Ensure we have a valid case study
   if (!caseStudy) {
-    navigate('/');
+    navigate("/");
     return null;
   }
 
@@ -189,14 +210,25 @@ const CaseStudy = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => navigate('/#projects')}
+            onClick={() => {
+              navigate("/");
+              // Use setTimeout to ensure navigation completes before scrolling
+              setTimeout(() => {
+                const projectsSection = document.querySelector("#projects");
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }, 100);
+            }}
             className="flex items-center hover:text-pulse-500 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Projects
           </Button>
           <div className="flex flex-col items-end">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-2">{caseStudy.title}</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-2">
+              {caseStudy.title}
+            </h1>
             <span className="text-sm text-gray-500">{caseStudy.category}</span>
           </div>
         </div>
@@ -227,13 +259,18 @@ const CaseStudy = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div>
             <h3 className="text-2xl font-bold mb-4">Project Overview</h3>
-            <p className="text-gray-600 leading-relaxed">{caseStudy.overview}</p>
+            <p className="text-gray-600 leading-relaxed">
+              {caseStudy.overview}
+            </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Tools & Technologies</h3>
             <div className="flex flex-wrap gap-2">
               {caseStudy.tools.map((tool, index) => (
-                <span key={index} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                <span
+                  key={index}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800"
+                >
                   {tool}
                 </span>
               ))}

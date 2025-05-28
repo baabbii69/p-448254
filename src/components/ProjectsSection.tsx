@@ -88,6 +88,7 @@ const ProjectsSection = () => {
       console.error("Invalid project slug");
       return;
     }
+    window.scrollTo(0, 0);
     navigate(`/case-study/${slug}`);
   };
 
