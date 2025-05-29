@@ -49,8 +49,8 @@ const Navbar = () => {
           }}
           aria-label="Portfolio"
         >
-          <div className="w-8 h-8 bg-pulse-500 rounded-full flex items-center justify-center text-white font-bold">
-            A
+          <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold">
+            <img src="/YA.png" alt="YA Logo" className="w-5 h-5 m-auto" />
           </div>
           <span className="font-bold text-lg">baabbii</span>
         </a>
